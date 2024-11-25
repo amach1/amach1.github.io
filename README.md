@@ -1,224 +1,226 @@
-# The Cayman Blog theme
+# vitepress-theme-bluearchive
 
-[![Build Status](https://travis-ci.org/lorepirri/cayman-blog.svg?branch=master)](https://travis-ci.org/lorepirri/cayman-blog) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman-blog.svg)](https://badge.fury.io/rb/jekyll-theme-cayman-blog)
+![logo](.vitepress/theme/assets/icon/footLogo.svg)
 
-*Cayman Blog is a Jekyll theme for GitHub Pages. It is based on the nice [Cayman theme](https://pages-themes.github.io/cayman/), with blogging features added. You can [preview the theme to see what it looks like](http://lorepirri.github.io/cayman-blog), or even [use it today](#usage).*
+BA 主题博客，基于 VitePress，绝赞画饼中
 
-<img src="https://raw.githubusercontent.com/lorepirri/cayman-blog/master/thumbnail.png" alt="Thumbnail of cayman-blog" style="max-width:30%; border: 1px solid grey;"/> <img src="https://raw.githubusercontent.com/lorepirri/cayman-blog/master/thumbnail-mobile.gif" alt="Thumbnail of cayman-blog for mobile" style="max-width:30%;"/>
+[在线预览](https://vitepress-theme-bluearchive.vercel.app/)
 
-## Install
+![preview](./preview.png)
 
-Cayman Blog Theme has been developed as a Jekyll theme gem for easier use. It is also 100% compatible with GitHub Pages — just with a more involved installation process according to whether you’re _running Jekyll v3.3+ and self-hosting_, or if you’re *hosting with GitHub Pages*.
+## 功能
 
-## Self hosting
+- [x] 首页横幅
+- [x] 文章列表
+- [x] 标签页面
+- [x] 搜索
+- [x] gitalk 评论
+- [x] 代码高亮
+- [x] 手机端适配
+- [x] latex 公式
+- [x] 点击烟花效果 🎉
+- [x] 底栏
+- [x] 优化 404
+- [x] Arona 的 spine 模型
+- [x] 首屏加载动画
 
-If you’re running Jekyll v3.3+ and **self-hosting** you can quickly install the theme as Ruby gem:
+## 画饼
 
-1. Add this line to your Jekyll site’s Gemfile:
+- [ ] RSS
+- [ ] 夜间模式
+- [ ] 为 Arona 添加更多交互
+- [ ] 让点击烟花更还原游戏效果
+- [ ] 骨架屏
+- [ ] more...
 
-    ```
-    gem "jekyll-theme-cayman-blog"
-    ```
+## 主题配置
 
-2. Add this line to your Jekyll site’s _config.yml file:
+**音乐** **首页背景** **头像**在`.vitepress/theme/assets/banner`
 
-    ```
-    theme: jekyll-theme-cayman-blog
-    ```
+**配置文件**在`.vitepress/config.mts`
 
-3. Then run Bundler to install the theme gem and dependencies:
+```ts
+export default defineConfigWithTheme<ThemeConfig>({
+  //...
 
-    ```
-    script/bootstrap
-    ```
+  // 站点标题配置
+  title: "Sensei's 部落格",
+  description: "Sensei's 部落格",
 
-## Hosting with GitHub Pages
+  themeConfig: {
+    //banner区配置
+    videoBanner: false, //是否显示视频背景
+    name: "Sensei's 部落格", //首页标题
+    welcomeText: 'Hello, VitePress', //首页欢迎语
+    motto: ['和你的日常，就是奇迹', '何気ない日常で、ほんの少しの奇跡を見つける物語。'], //首页motto
+    social: [ //社交链接配置(netease_music,coolapk,reddit)
+      { icon: 'github', url: 'https://github.com/' },
+      { icon: 'bilibili', url: 'https://www.bilibili.com/' },
+      { icon: 'qq', url: 'https://im.qq.com/index/' },
+      { icon: 'wechat', url: 'https://weixin.qq.com/' },
+    ],
 
-If you’re *hosting your blog with GitHub Pages* you’ll have to consider this:
+    //footer配置
+    footerName: 'Sensei',
+    poweredList: [
+      { name: 'VitePress', url: 'https://github.com/vuejs/vitepress' },
+      { name: 'GitHub Pages', url: 'https://docs.github.com/zh/pages' },
+    ],
 
-:warning: As stated in the official [Jekyll documentation](https://jekyllrb.com/docs/themes/#installing-a-theme):
+    //gitalk配置
+    clientID: 'YourClientID',
+    clientSecret: 'YourClientSecret',
+    repo: 'YourRepoName',
+    owner: 'YourGitHubName',
+    admin: ['YourGitHubName'],
+  }
+}),
+```
 
-> If you’re publishing your Jekyll site on [GitHub Pages](https://pages.github.com/), note that GitHub Pages supports only some gem-based themes. See [Supported Themes](https://pages.github.com/themes/) in GitHub’s documentation to see which themes are supported.
+## 站点地图配置(SEO 优化)
 
-Therefore, this theme, as well as many others, can not be installed in the same way as the ones officially supported by GitHub Pages (e.g. Cayman, Minima), a bit more effort has to be put on.
+配置文件在`.vitepress/config.mts`
 
-The easiest way I found to install _Cayman Blog Theme_, is [installing the theme gem](gem-install), and then [converting the gem-based theme to regular theme](https://jekyllrb.com/docs/themes/#converting-gem-based-themes-to-regular-themes).
+```ts
+  // 生成站点地图
+  sitemap: {
+    hostname: 'https://vitepress-theme-bluearchive.vercel.app', //替换为你自己的域名
+  }
+```
 
-Alternatively, for new projects, one could fork the whole theme, and keep only the interesting files.
+## 文章配置
 
+```md
+---
+title: 标题
+date: 日期
+tags: [标签1, 标签2]
+head:
+  - - meta
+    - name: description
+      content: SEO优化描述
+  - - meta
+    - name: keywords
+      content: SEO优化 关键词
+---
 
-### Gem Install
+文章摘要，会在文章列表中显示
 
-This method is preferred for existing _Jekyll blogs_, as well as newly created ones. Notice that the files `index.md`, `about.md`, `contact.md` will be overwritten (only `index.md` is really needed, the other two are just placeholders).
+---
 
-1. Install the theme gem: ` $ gem install jekyll-theme-cayman-blog`
-3. Run `$ gem env gemdir` to know where the gem was installed
-4. Open the folder shown in the output
-5. Open the folder `gems`
-5. Open the theme folder (e.g. `jekyll-theme-cayman-blog-0.0.5`)
-6. Copy all the files into your newly created or existing blog folder    
-7. Leave empty `theme` your site's `_config.yml`:
+文章主体内容
+```
 
-    ```yml
-    theme:
-    ```
-6. Modify `_config.yml`, `about.md`, `contact.md` for your project
-7. [Customize the theme](customizing)
+## 快速开始
 
-### Install as a Fork
+```bash
+# pnpm (推荐)
+# 安装依赖
+pnpm install
+# 开发项目
+pnpm run dev
+# 打包项目
+pnpm run build
 
-1. [Fork the repo](https://github.com/lorepirri/cayman-blog)
-2. Clone down the repo with `$ git clone git@github.com:username/reponame.git`
-3. Delete the `screenshot.png` and `screenshot-mobile.png` files
-3. Empty the `_posts` folder
-4. Install bundler and gems with `$ script/bootstrap`
-5. Run Jekyll with `$ bundle exec jekyll serve`
-6. Modify `_config.yml`, `about.md`, `contact.md`, and `now.md` for your project
-7. [Customize the theme](customizing)
+# yarn
+# yarn install
+# yarn run dev
+# yarn run build
 
-## Customizing
+# npm
+# npm install
+# npm run dev
+# npm run build
 
-### Configuration variables
+```
 
-Cayman Blog will respect the following variables, if set in your site's `_config.yml`:
+## 上线 GitHub Pages 并使用 GitHub Actions 自动构建
+
+本仓库为模板仓库，你可以点击右上角绿色的`Use this template`按钮，快速创建基于本仓库的 GitHub Pages 仓库。
+
+关于模板仓库，你可以点击[从模板创建仓库](https://docs.github.com/zh/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)。
+
+关于 GitHub Pages 仓库，你可以点击[GitHub Pages 快速入门](https://docs.github.com/zh/pages/getting-started-with-github-pages)。
+
+关于 GitHub Actions，你可以点击[GitHub Actions 文档](https://docs.github.com/zh/actions)。
+
+### GitHub Actions 相关配置
+
+在项目的 .github/workflows 目录中创建一个名为 deploy.yml 的文件，其中包含这样的内容：
 
 ```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
+# 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
+#
+name: Deploy VitePress site to Pages
+
+on:
+  # 在针对 `main` 分支的推送上运行。如果你
+  # 使用 `master` 分支作为默认分支，请将其更改为 `master`
+  push:
+    branches: [main]
+
+  # 允许你从 Actions 选项卡手动运行此工作流程
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
+# 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # 构建工作
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+        with:
+          version: 9
+      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm # 或 pnpm / yarn
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Install dependencies
+        run: pnpm install # 或 pnpm install / yarn install / bun install
+      - name: Build with VitePress
+        run: pnpm run build # 或 pnpm build / yarn build / bun run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist
+
+  # 部署工作
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
-Additionally, you may choose to set the following optional variables:
+## 感谢
 
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
-
-### RSS feeds
-
-To enable RSS feeds and also make visible an RSS feeds button in the footer, the [Jekyll Feed plugin](https://github.com/jekyll/jekyll-feed) must be installed.
-
-Add this line to your site's Gemfile:
-
-```ruby
-gem 'jekyll-feed'
-```
-
-And then add this line to your site's `_config.yml`:
-
-```yml
-plugins:
-  - jekyll-feed
-```
-
-:warning: If you are using Jekyll < 3.5.0 use the `gems` key instead of `plugins`.
-
-For more information about configuring this plugin, see the official [Jekyll Feed plugin](https://github.com/jekyll/jekyll-feed) page.
-
-### SEO tags
-
-Cayman Blog includes simple SEO tags from [jekyll-social-metatags](https://github.com/lorepirri/jekyll-social-metatags). Have a look at the page for its usage.
-
-The usage is compatible with the plugin [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag), which provides a battle-tested template of crowdsourced best-practices.
-
-To switch to a better SEO tags however, one should install [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag):
-
-1. Add this line to your site's Gemfile:
-
-    ```ruby
-    gem 'jekyll-seo-tag'
-    ```
-
-2. And then add this line to your site's `_config.yml`:
-
-    ```yml
-    plugins:
-      - jekyll-seo-tag
-    ```
-
-3. Replace with the following, the `<!-- jekyll-seo-tag -->` comment in your site's `default.html`:
-
-      ```liquid
-      {% seo %}
-      ```
-
-For more information about configuring this plugin, see the official [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag) page.
-
-
-### Stylesheet
-
-If you'd like to add your own custom styles:
-
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
-
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
-
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
-
-### Layouts
-
-If you'd like to change the theme's HTML layout:
-
-1. [Copy the original template](https://github.com/lorepirri/cayman-blog/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
-
-### Sass variables
-
-If you'd like to change the theme's [Sass variables](https://github.com/lorepirri/cayman-blog/blob/master/_sass/variables.scss), set new values before the `@import` line in your stylesheet:
-
-```scss
-$section-headings-color: #0086b3;
-
-@import "{{ site.theme }}";
-```
-
-### Overriding GitHub-generated URLs
-
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
-
-1. Look at [the template source](https://github.com/lorepirri/cayman-blog/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
-
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
-
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
-
-## Roadmap
-
-See the [open issues](https://github.com/lorepirri/cayman-blog/issues) for a list of proposed features (and known issues).
-
-## Project philosophy
-
-The Cayman Blog theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
-
-## Contributing
-
-Interested in contributing to Cayman Blog? We'd love your help. Cayman Blog is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
-
-### Previewing the theme locally
-
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/lorepirri/cayman-blog`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
-
-### Running tests
-
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
+- [vitepress-theme-sakura](https://github.com/flaribbit/vitepress-theme-sakura) 提供参考
+- [vitepress X BA logo](https://github.com/nulla2011/bluearchive-logo) 非常好 BA logo 生成器
+- [Anime.js Fireworks canvas demo](https://codepen.io/juliangarnier/pen/gmOwJX) and [hexo-theme-yun](https://github.com/YunYouJun/hexo-theme-yun) 点击烟花效果 🎉
+- [spine-runtimes](https://github.com/esotericsoftware/spine-runtimes) spine 运行时
+- [Blueaka@kivo.fun](https://kivo.fun/) BA 游戏字体
