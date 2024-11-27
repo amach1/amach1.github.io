@@ -82,12 +82,12 @@ export default defineConfigWithTheme<ThemeConfig>({
     social: [
       { icon: 'github', url: 'https://github.com/amach1' },
       { icon: 'bilibili', url: 'https://space.bilibili.com/410923' },
-      { icon: 'qq', url: 'https://im.qq.com/index/' },
-      { icon: 'wechat', url: 'https://weixin.qq.com/' },
+      //{ icon: 'qq', url: 'https://im.qq.com/index/' },
+      //{ icon: 'wechat', url: 'https://weixin.qq.com/' },
     ],
 
     //footer配置
-    footerName: 'Sensei',
+    footerName: 'AMACHI',
     poweredList: [
       { name: 'VitePress', url: 'https://github.com/vuejs/vitepress' },
       { name: 'GitHub Pages', url: 'https://docs.github.com/zh/pages' },
