@@ -94,8 +94,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     //gitalk配置
-    clientID: process.env.BLOG_APP_ID,
-    clientSecret: process.env.BLOG_APP_SECRET,
+    clientID: process.env.BLOG_APP_ID as string,
+    clientSecret: process.env.BLOG_APP_SECRET as string,
     repo: 'amach1.github.io',
     owner: 'amach1',
     admin: ['amach1'],
