@@ -47,6 +47,9 @@ jobs:
         run: pnpm install # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: pnpm run build # 或 pnpm build / yarn build / bun run build
+        env:
+          BLOG_APP_ID: ${{ secrets.BLOG_APP_ID }}
+          BLOG_APP_SECRET: ${{ secrets.BLOG_APP_SECRET }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
