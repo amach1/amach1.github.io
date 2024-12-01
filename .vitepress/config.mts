@@ -99,7 +99,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     repo: 'amach1.github.io',
     owner: 'amach1',
     admin: ['amach1'],
-    id: location.pathname,
   },
   markdown: {
     theme: 'github-light',
