@@ -7,7 +7,6 @@
   "author": "Alittfre",
   "license": "ISC",
   "devDependencies": {
-    "gitalk": "https://github.com/LibraHeresy/gitalk.git",
     "@types/animejs": "^3.1.12",
     "@types/md5": "^2.3.5",
     "@types/node": "^22.9.0",
