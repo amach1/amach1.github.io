@@ -2,7 +2,7 @@
 title: 北醒TF系列雷达替代LIDAR LITE V3
 
 date: 2023-09-05
-tags: [硬件， 雷达，]
+tags: [硬件, 雷达]
 head:
   - - meta
     - name: 北醒TF系列雷达替代LIDAR LITE V3
