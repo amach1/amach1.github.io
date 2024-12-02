@@ -26,6 +26,13 @@ export interface ThemeConfig {
 export default defineConfigWithTheme<ThemeConfig>({
   lang: 'zh-CN',
   head: [
+    ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-R69BV2F9SP' }],
+    ['script', {}, `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R69BV2F9SP');
+    `],
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
     // gitalk
     ['link', { rel: 'stylesheet', href: 'https://unpkg.com/gitalk/dist/gitalk.css' }],
