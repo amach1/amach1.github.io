@@ -78,7 +78,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     videoBanner: false,
     name: "阿麻鸡",
     welcomeText: '麻鸡快乐窝',
-    motto: ['和你的日常，就是奇迹', '何気ない日常で、ほんの少しの奇跡を見つける物語。'],
+    motto: ['世无神而不立', '神の存在なくしてこの世は、無意味ね。'],
     social: [
       { icon: 'github', url: 'https://github.com/amach1' },
       { icon: 'bilibili', url: 'https://space.bilibili.com/410923' },
