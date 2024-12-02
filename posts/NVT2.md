@@ -1,7 +1,7 @@
 ---
 title: 诺瓦泰718D+北斗星通UM980+2128集成
 date: 2024-02-11
-tags: [硬件, GPS, RTK，飞控]
+tags: [硬件, GPS, RTK, 飞控]
 head:
   - - meta
     - name: 诺瓦泰718D+北斗星通UM980+2128g
