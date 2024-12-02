@@ -2,7 +2,7 @@
 title: 北醒TF系列雷达替代LIDAR LITE V3
 
 date: 2023-09-05
-tags: [硬件， 雷达]
+tags: [硬件， 雷达，]
 head:
   - - meta
     - name: 北醒TF系列雷达替代LIDAR LITE V3
@@ -31,11 +31,12 @@ Featuring all of the core features of the popular LIDAR-Lite v2, this easy-to-us
   
 
 查看相应型号激光雷达的官方文档，这里以TF02pro为例：  
-使用串口模块连接激光高度计核对通讯设置以及数据位，并根据数据数量创建结构体并输出。   
 
 
 ![Caption](/TF022.jpg)   
-  
+
+用串口模块连接激光高度计核对通讯设置以及数据位，并根据数据数量创建结构体并输出。  
+
 # 实现方式 
 使用arduino等单片机的串口获取激光高度计数据，并使用PWM引脚输出相应比例脉宽来模拟目标替换设备。
 
