@@ -1,7 +1,7 @@
 ---
 title: LVTTL和232，到底长什么样？
 date: 2023-08-30
-tags: [通讯协议]
+tags: [硬件, 通讯协议]
 head:
   - - meta
     - name: LVTTL和232，到底长什么样？

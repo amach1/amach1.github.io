@@ -1,15 +1,15 @@
 ---
-title: 北醒TF系列雷达替代LIDAR LITE V3
+title: 使用北醒TF系列雷达替代佳明LIDAR-Lite v3
 
 date: 2023-09-05
-tags: [硬件, 雷达]
+tags: [硬件, 雷达 , Arduino]
 head:
   - - meta
-    - name: 北醒TF系列雷达替代LIDAR LITE V3
-      content: 北醒TF系列雷达替代LIDAR LITE V3
+    - name: 使用北醒TF系列雷达替代佳明LIDAR-Lite v3
+      content:  使用北醒TF系列雷达替代佳明LIDAR-Lite v3
   - - meta
-    - name: 北醒TF系列雷达替代LIDAR LITE V3
-      content: 北醒TF系列雷达替代LIDAR LITE V3
+    - name: 使用北醒TF系列雷达替代佳明LIDAR-Lite v3
+      content: 使用北醒TF系列雷达替代佳明LIDAR-Lite v3
 ---
 
 由于某不知名飞控仅支持部分国外市售激光雷达，但采购又贵又慢，故产生了本篇以更易于获取的的国产雷达+arduino代替lidar lite v3的记录。
