@@ -39,6 +39,6 @@ head:
 如果浏览器未加载任何元素，检查你是否还有未关闭的配置页面或任何登陆了摄像头管理账户的页面。
 如果浏览器弹出登录窗口，不要继续刷新。确认你的账号密码是否正确（除非二者一样，否则不要在凭据输入窗口输入摄像头管理账户，这一步需要验证的是你在onvif配置页面中创建的ID和PW）
 
-##使用
+## 使用
 使用wget方法下载图片
 wget -O camera.jpeg 'http://<ID>:<PW>@<IP>/ISAPI/Streaming/channels/101/picture?snapShotImageType=JPEG'
