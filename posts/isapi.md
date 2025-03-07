@@ -52,4 +52,5 @@ http://<ID>:<PW>@<IP>/ISAPI/Streaming/channels/101/picture?snapShotImageType=JPE
 使用wget方法下载图片
 ```bash
 wget -O camera.jpeg 'http://<ID>:<PW>@<IP>/ISAPI/Streaming/channels/101/picture?snapShotImageType=JPEG'
+
 ```
