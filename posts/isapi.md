@@ -21,7 +21,7 @@ head:
 
 ## 网络设置
 
-首先使用网线连接摄像头与树莓派，尝试使用浏览器进入摄像头配置页面，摄像头默认IP192.168.1.64。 
+首先使用网线连接摄像头与树莓派，尝试使用浏览器进入摄像头配置页面，摄像头默认IP192.168.1.64。如果不清楚IP，可以使用海康交付助手工具。 
 
 ::: tip
 切记关闭安全选项卡中的非法登陆锁定，防止因为疏忽锁定摄像头管理员账户。
@@ -50,5 +50,6 @@ http://<ID>:<PW>@<IP>/ISAPI/Streaming/channels/101/picture?snapShotImageType=JPE
 
 ## 使用
 使用wget方法下载图片
-```bashwget -O camera.jpeg 'http://<ID>:<PW>@<IP>/ISAPI/Streaming/channels/101/picture?snapShotImageType=JPEG'
+```bash
+wget -O camera.jpeg 'http://<ID>:<PW>@<IP>/ISAPI/Streaming/channels/101/picture?snapShotImageType=JPEG'
 ```
