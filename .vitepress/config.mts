@@ -53,19 +53,19 @@ export default defineConfigWithTheme<ThemeConfig>({
       },
     ],
     // 图片灯箱
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css',
-      },
-    ],
-    [
-      'script',
-      {
-        src: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js',
-      },
-    ],
+     // [
+       // 'link',
+       // {
+         // rel: 'stylesheet',
+         // href: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css',
+       // },
+     // ],
+     // [
+       // 'script',
+       // {
+         // src: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js',
+       // },
+     // ],
   ],
   ignoreDeadLinks: true,
   // 生成站点地图
