@@ -5,11 +5,8 @@ date: 2023-09-05
 tags: [硬件, 雷达 , Arduino]
 head:
   - - meta
-    - name: 使用北醒TF系列雷达替代佳明LIDAR-Lite v3
+    - name: description
       content:  使用北醒TF系列雷达替代佳明LIDAR-Lite v3
-  - - meta
-    - name: 使用北醒TF系列雷达替代佳明LIDAR-Lite v3
-      content: 使用北醒TF系列雷达替代佳明LIDAR-Lite v3
 ---
 
 东西辣么贵，货期辣么慢，加班辣么多，悲伤辣么大。
@@ -18,35 +15,37 @@ head:
 
 # 前言
 
-由于某不知名飞控仅支持部分国外市售激光雷达，但采购又贵又慢，故产生了本篇以更易于获取的的国产雷达+arduino代替LIDAR-Lite v3的记录。
+由于某不知名飞控仅支持部分国内不常见的激光雷达，而采购过程又贵又慢，因此产生了本篇记录，尝试利用更易获取的平价激光雷达配合 Arduino 来代替 LIDAR-Lite v3。
 
 ## 替换设备与目标设备信息
-### Lidar lite v3工作模式
+### Lidar Lite v3工作模式
 ![Caption](/LITEV3.jpg)
+
 > When space and weight requirements are tight, the LIDAR-Lite v3 soars. It’s the ideal compact, high-performance optical distant measurement sensor solution for drone, robot or unmanned vehicle applications. Using a single chip signal processing solution along with minimal hardware, this highly configurable sensor can be used as the basic building block for applications where small size, light weight, low power consumption and high performance are important factors.  
 Featuring all of the core features of the popular LIDAR-Lite v2, this easy-to-use 40 meter laser-based sensor uses about 130 milliamps during an acquisition. It is user-configurable so you can adjust between accuracy, operating range and measurement time.  It’s reliable, powerful ranging and it’s the proximity sensor you need.  
 ——摘自佳明官网
   
-  设备默认以I2C形式输出高度数据，但提供了一个模式控制线来实现pwm输出。
+  设备默认以I2C形式输出高度数据，同时也提供了一个模式控制线用于切换为PWM输出。
 
   ![Caption](/LITEV32.jpg)  
     
 ### 北醒TF系列雷达工作模式
+
 ![Caption](/TF02.jpg)    
   
 
-查看相应型号激光雷达的官方文档，这里以TF02pro为例：  
+查看对应型号激光雷达的官方文档，这里以TF02 Pro为例：  
 
 
 ![Caption](/TF022.jpg)   
 
-用串口模块连接激光高度计核对通讯设置以及数据位，并根据数据数量创建结构体并输出。  
+使用串口模块连接激光高度计核对通信设置以及数据位，并根据数据长度创建结构体并输出。  
 
 ## 实现方式 
-使用arduino等单片机的串口获取激光高度计数据，并使用PWM引脚输出相应比例脉宽来模拟目标替换设备。
+使用Arduino等单片机通过串口获取激光高度计数据，再通过PWM引脚输出相应比例脉宽来模拟目标替换设备。
 
 ### 代码部分
-Arduino nano 与TF-02pro组合的代码（TF-02Pro在2米状态下以该种形式输出脉宽对应的距离为2.072米）
+Arduino nano 与TF02 Pro组合的代码（TF02 Pro在2米高度下以该种形式输出脉宽对应的距离约为2.072米）
 
 ```cpp
   
@@ -107,17 +106,19 @@ Arduino nano 与TF-02pro组合的代码（TF-02Pro在2米状态下以该种形�
     }
   }
 ```
-烧录代码后，将雷达与arduino连接，并通过串口查看输出距离，当确定距离值与实际情况接近后，使用示波器探针连接输出脚检查脉宽。 
+烧录代码后，将雷达与Arduino连接，并通过串口查看输出距离，当确定距离值与实际情况基本一致后，使用示波器探针连接输出脚检查脉宽。 
 
 ### 硬件连接
 先看看官方的连接示意图  
 
 ![Caption](/2128.jpg)   
+
 高度数据通过AGL接插件蓝色线传输。直接将其与arduino的D9连接。激光高度计的供电部分由arduino提供，arduino的供电来自舵机板的5V供电。
-作为MCU以及单片机的一般通讯协议。LVTTL在无数据通讯时往往维持在3.3V左右的的电压范围。  
+作为MCU以及单片机的常见通信电平标准。LVTTL在无数据通信时会维持在3.3V左右的电压范围。  
 
 ### 上位机设置
   打开VRS的传感器选项卡,将AGL部分如下图设置  
+  
   ![Caption](/AGL.jpg)  
 
 检查飞控字段，此时可以正常显示高度数据。

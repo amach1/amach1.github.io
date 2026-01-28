@@ -4,10 +4,7 @@ date: 2024-04-22
 tags: [硬件, PCB]
 head:
   - - meta
-    - name: 简简单单抄个板
-      content: 简简单单抄个板
-  - - meta
-    - name: 简简单单抄个板
+    - name: description
       content: 简简单单抄个板
 ---
 
@@ -20,7 +17,9 @@ head:
 
 ## 测量确定连接情况
 ![Caption](/servo.jpg)  
+
 先用万用表把能够确定的引脚及焊盘连接确认下来，接着再通过断裂PCB上的线路纹路确认连接方向，最终得到下图结果。  
+
 ![Caption](/CB.jpg)
 
 ## 绘制原理图及PCB
@@ -34,6 +33,7 @@ head:
 ![Caption](/PCB_servo2.jpg)
 
 感觉原厂外观尺寸太大？反正都抄了，不如改成自己需要的尺寸。  
+
 ![Caption](/PCB_servo.jpg)
 
 ## 测试
