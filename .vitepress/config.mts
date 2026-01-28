@@ -24,6 +24,7 @@ export interface ThemeConfig {
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
+  base: '/',
   lang: 'zh-CN',
   head: [
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-R69BV2F9SP' }],
