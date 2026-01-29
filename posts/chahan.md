@@ -1,7 +1,7 @@
 ---
 title: 简简单单抄个板
 date: 2024-04-22
-tags: [硬件, PCB]
+tags: [硬件]
 head:
   - - meta
     - name: description

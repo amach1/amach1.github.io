@@ -1,7 +1,7 @@
 ---
 title: 树莓派搭配海康威视枪机通过ISAPI获取快照
 date: 2024-12-18
-tags: [硬件, 树莓派]
+tags: [硬件]
 head:
   - - meta
     - name: description

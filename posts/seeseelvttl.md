@@ -1,7 +1,7 @@
 ---
 title: 用示波器观察LVTTL和232的特点
 date: 2023-05-30
-tags: [硬件, 通讯协议]
+tags: [硬件]
 head:
   - - meta
     - name: description

@@ -1,7 +1,7 @@
 ---
 title: 浅析诺瓦泰OEM718D
 date: 2023-12-14
-tags: [硬件, GPS, RTK]
+tags: [硬件]
 head:
   - - meta
     - name: description
