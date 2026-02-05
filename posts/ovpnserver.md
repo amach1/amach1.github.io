@@ -1,11 +1,11 @@
 ---
-title: centos服务器部署OPENVPN服务端并启用网对网（服务端篇）
-date: 2025-02-5
-tags: [服务器, vpn]
+title: CentOS服务器部署OpenVPN服务端并启用网对网（服务端篇）
+date: 2025-02-05
+tags: [服务器, VPN]
 head:
   - - meta
     - name: description
-      content: centos服务器部署OPENVPN服务端并启用网对网（服务端篇）
+      content: CentOS服务器部署OpenVPN服务端并启用网对网（服务端篇）
 ---
 
 比N2N兼容性高、比WireGuard覆盖面广。
