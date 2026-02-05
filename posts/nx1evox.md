@@ -19,13 +19,13 @@ head:
 ![Caption](/zm1.jpg)
 
 ::: tip
-以下内容仅针对蓝狐NX1+美版系统+EVOX_gapps(A16)+中国联通的组合，其他运营商因条件限制未做测试。
+以下内容仅针对蓝狐NX1+美版系统底包+EVOX_gapps(A16)+中国联通的组合，其他运营商因条件限制未做测试。
 :::
  
 ## 刷机流程
 
 ::: tip
-解BL操作可以参考蓝狐社区文章或自行搜索相关B站视频，本文不再赘述。
+解BL操作可以参考蓝狐社区文章或自行搜索相关B站视频。
 :::
 
 ### 准备工作
@@ -34,7 +34,7 @@ head:
 - 一台电脑
 - 充满电的手机
 - 数据线
-- [官方底包](https://www.bluefoxforum.com/single/988)
+- [官方底包（美版20251029）](https://www.bluefoxforum.com/single/988)
 - [官方提供的刷机工具和驱动](https://www.bluefoxforum.com/single/339)
 - [EVOXGSI包（arm64-ab）](https://github.com/Doze-off/EvoX_treble/releases/tag/2025-09-02)
 - [Fish_Neko发布于酷安的修复模块（只需要下载01B_For_Patched_LineageOS_VolteAudio_Fixup_NX1）](https://www.coolapk.com/feed/68424693?s=MGQwNjQ0MmQyNjExNmFjZzY5N2YzMjVkega1572)
