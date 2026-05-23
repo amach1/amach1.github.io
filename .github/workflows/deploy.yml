@@ -24,14 +24,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # 构建工作
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
         with:
           version: 9
