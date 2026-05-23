@@ -89,7 +89,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     social: [
       { icon: 'github', url: 'https://github.com/amach1' },
       { icon: 'bilibili', url: 'https://space.bilibili.com/410923' },
-      //{ icon: 'qq', url: 'https://im.qq.com/index/' },
+      { icon: 'tw', url: 'https://x.com/amachi_me' },
       //{ icon: 'wechat', url: 'https://weixin.qq.com/' },
     ],
 
